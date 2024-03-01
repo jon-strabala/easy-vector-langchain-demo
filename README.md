@@ -1,20 +1,20 @@
 ## Basic Vector Search Demo using Couchbase, Langchain, and OpenAI
 
-This is a demo app built to highlight basic functionality of vector search of Couchbase to utlize OpenAI embeddings for semantic search.
-Once your environment variables are setup and your server hase the right resources. 
+This is a demo app built to highlight basic functionality of vector search of Couchbase to utilize OpenAI embeddings for semantic search.
+Once your environment variables are setup and your server has the right resources. 
 
 ### Prerequisites 
 
-You will need admin privliges for your onprem couchbase server 
+You will need admin privileges for your onprem Couchbase server 
 and an OpenAI API bearer key for this demo
 
 ### How does it work?
 
 It loads ten (10) simple words into a Couchbase collection.
 
-It executes three (3) canned queries agains the Couchbase collection.
+It executes three (3) canned queries against the Couchbase collection containing your vector embeddings.
 
-For each question, you will three ordered answers
+For each question, you will three ordered answers from your vector search
 
 ### How to Run
 
@@ -22,7 +22,7 @@ For each question, you will three ordered answers
 
   `pip install -r requirements.txt`
 
-- Copy the template envirnment template
+- Copy the template environment template
 
   `cp _setup.tmpl _setup`
 
@@ -52,11 +52,11 @@ For each question, you will three ordered answers
 
   `chmod +x basic_couchbase_langchain.py  check_couchbase.sh  check_openai.py  setup.sh`
 
-- Verify conectivity and authentication to your Couchbase server
+- Verify connectivity and authentication to your Couchbase server
 
   `./check_couchbase.sh`
 
-- Verify conectivity and authentication to OpenAI
+- Verify connectivity and authentication to OpenAI
 
   `./check_openai.py`
 
