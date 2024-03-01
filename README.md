@@ -54,7 +54,7 @@ For each question, you will three ordered answers
 
 - Verify conectivity and authentication to your Couchbase server
 
-  `./check_db.sh`
+  `./check_couchbase.sh`
 
 - Verify conectivity and authentication to OpenAI
 
