@@ -3,12 +3,11 @@
 This is a demo app built to highlight basic functionality of vector search of Couchbase to utilize OpenAI embeddings for semantic search.
 Once your environment variables are setup and your server has the right resources. 
 
-The demo will run for both self-managed OnPrem deployments and also clould based Capella deployments
+The demo will run for both self-managed OnPrem 7.6+ Couchbase deployments and also clould based 7.6+ Capella deployments
 
 ### Prerequisites 
 
-You will need admin privileges for your onprem Couchbase server 7.6+
-and an OpenAI API bearer key for this Linux demo
+You will need a database user with login credentials to your Couchbase cluster and an OpenAI API bearer key for this Linux demo
 
 You probably want to create and activate a virtual environment using the standard library’s virtual environment tool venv and install packages.
 
@@ -58,7 +57,7 @@ The evar CB_FTSHOSTNAME is set to a node running the search service (or fts) for
 
   `. _setup`
 
-- If needed set the executable mod for the following:
+- If needed set the executable bit via chmod for the following:
 
   `chmod +x basic_couchbase_langchain.py  check_couchbase.sh  check_openai.py  setup.py`
 
