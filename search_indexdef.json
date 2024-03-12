@@ -1,6 +1,6 @@
 {
   "type": "fulltext-index",
-  "name": "vectordemos.langchain.basic_index",
+  "name": "basic_index",
   "sourceType": "gocbcore",
   "sourceName": "vectordemos",
   "planParams": {

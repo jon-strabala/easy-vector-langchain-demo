@@ -2,3 +2,4 @@ couchbase==4.1.12
 langchain-community @ git+https://github.com/nithishr/langchain.git@2a93972f8427d325200b72c99df76fe325704cb5#subdirectory=libs/community
 langchain==0.1.11
 langchain-openai==0.0.8
+requests==2.31.0

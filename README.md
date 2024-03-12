@@ -3,6 +3,8 @@
 This is a demo app built to highlight basic functionality of vector search of Couchbase to utilize OpenAI embeddings for semantic search.
 Once your environment variables are setup and your server has the right resources. 
 
+The demo will run for both self-managed OnPrem deployments and also clould based Capella deployments
+
 ### Prerequisites 
 
 You will need admin privileges for your onprem Couchbase server 7.6+
@@ -33,28 +35,32 @@ For each question, you will three ordered answers from your vector search
 - Required environment variables that you must configure in _setup
   ```
   export CB_HOSTNAME="<the hostname or IP address of your Couchbase server>" 
+  export CB_FTSHOSTNAME="<the hostname or IP address of a node running Search in your Couchbase cluster>" 
   export CB_USERNAME="<username_for_couchbase_cluster>" 
   export CB_PASSWORD="<password_for_couchbase_cluster>"
   export OPENAI_API_KEY="<open_ai_api_key>"
   ```
 
+- Note CB_HOSTNAME may not be the same as CB_FTSHOSTNAME.
+The evar CB_HOSTNAME is typically an IP in your cluster (or the Capella CONNECT hostname) for the Python SDK to connect to couchbases://${CB_HOSTNAME}. 
+The evar CB_FTSHOSTNAME is set to a node running the search service (or fts) for a curl like connection to https://${CB_FTSHOSTNAME}:18094 used for index creation. 
+
 - Optional environment variables that you may alter in _setup
 
   ```
-  export CB_HOME="<the home directory of Couchbase>"
   export CB_BUCKET=vectordemos
   export CB_SCOPE=langchain
   export CB_COLLECTION=basic
   export CB_SEARCHINDEX=basic_index
   ```
 
-- Source the _setup file (we assume a bash shell)
+- Source the _setup file (we assume a bash shell) to configure your environment variables
 
   `. _setup`
 
-- Set the executable mod for the following:
+- If needed set the executable mod for the following:
 
-  `chmod +x basic_couchbase_langchain.py  check_couchbase.sh  check_openai.py  setup.sh`
+  `chmod +x basic_couchbase_langchain.py  check_couchbase.sh  check_openai.py  setup.py`
 
 - Verify connectivity and authentication to your Couchbase server
 
@@ -66,7 +72,7 @@ For each question, you will three ordered answers from your vector search
 
 - Setup the Couchbase infrastructure (bucket, scope, collection and a search vector index) via the bash script
 
-  `./setup.sh`
+  `./setup.py`
 
 - Run the application
 
@@ -99,4 +105,4 @@ For each question, you will three ordered answers from your vector search
 
   Running basic_couchbase_langchain.py multiple times will load the same data again
 
-  You can run `./setup.sh` again to get an option to flush all the data in your bucket.
+  You can run `./setup.py` again to get an option to reset your collection (drop/create) and readd your search index.
