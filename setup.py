@@ -11,6 +11,7 @@ from couchbase.cluster import Cluster
 from couchbase.options import ClusterOptions
 from couchbase.auth import PasswordAuthenticator
 from couchbase.exceptions import BucketNotFoundException, ScopeNotFoundException, InternalServerFailureException
+from couchbase.exceptions import UnAmbiguousTimeoutException, AuthenticationException
 from couchbase.management.buckets import BucketManager
 from couchbase.management.buckets import CreateBucketSettings
 from couchbase.management.collections import CollectionSpec
@@ -99,8 +100,20 @@ def get_collection(collection_mgr, scope_name, coll_name):
 # Suppress only the single InsecureRequestWarning from urllib3 needed for unverified HTTPS requests
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
-pa = PasswordAuthenticator(os.getenv("CB_USERNAME"), os.getenv("CB_PASSWORD"))
-cluster = Cluster("couchbases://" + os.getenv("CB_HOSTNAME") + "/?ssl=no_verify", ClusterOptions(pa))
+try:
+    pa = PasswordAuthenticator(os.getenv("CB_USERNAME"), os.getenv("CB_PASSWORD"))
+    cluster = Cluster("couchbases://" + os.getenv("CB_HOSTNAME") + "/?ssl=no_verify", ClusterOptions(pa))
+except UnAmbiguousTimeoutException as e:
+    print(f"Failed to connect to couchbases://" + os.getenv("CB_HOSTNAME") + "a/?ssl=no_verify due to UnAmbiguousTimeoutException.")
+    print(f"Check that CB_HOSTNAME is set and that your IP is allowed to access the target service.")
+    sys.exit(1)
+except AuthenticationException as e:
+    print(f"Incorrect authentication configuration, bucket doesn't exist or bucket may be hibernated due to AuthenticationException.")
+    print(f"Check that CB_USERNAME and CB_PASSWORD are set and a legal user on OnPrem or a configured Capella database user.")
+    sys.exit(1)
+except Exception as e:
+    print(f"An error occurred: {e}")
+
 
 bucket_name = os.getenv("CB_BUCKET")
 scope_name = os.getenv("CB_SCOPE")
