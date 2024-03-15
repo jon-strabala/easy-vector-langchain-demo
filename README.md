@@ -13,7 +13,16 @@ You probably want to create and activate a virtual environment using the standar
 
 - https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/
 
-### How does it work?
+Quick tips on python virtual environments
+
+- Create and activate a virtual environment in the current directory<br><br>
+`python3 -m venv .venv`<br>
+`source .venv/bin/activate`
+
+- Then when all done deactivate it<br><br>
+`deactivate`
+
+### How does this demo work?
 
 It loads ten (10) simple words into a Couchbase collection.
 
