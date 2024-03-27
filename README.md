@@ -106,7 +106,7 @@ The evar CB_FTSHOSTNAME is set to a node running the search service (or fts) for
            (Document(page_content='stone'), 0.8148258924484253)
            (Document(page_content='rock'), 0.8030873537063599)
 
-  run ./setup.sh again to flush data
+  run ./setup.py again and answer 'y' to flush data
   ```
 
 - Other
