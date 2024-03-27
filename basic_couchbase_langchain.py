@@ -29,6 +29,6 @@ for query in ["vespa", "puma", "nugget"]:
         print("\t",result)
     print("")
 
-print("run ./setup.sh again to flush data")
+print("run ./setup.py again and answer 'y' to flush data")
 # print("flushing bucket vector_demo_sdk, this may take some time")
 # cluster.buckets().flush_bucket("vector_demo_sdk")
