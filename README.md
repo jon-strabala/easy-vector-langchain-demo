@@ -3,7 +3,9 @@
 This is a demo app built to highlight basic functionality of vector search of Couchbase to utilize OpenAI embeddings for semantic search.
 Once your environment variables are setup and your server has the right resources. 
 
-The demo will run for both self-managed OnPrem 7.6+ Couchbase deployments and also clould based 7.6+ Capella deployments
+The demo will run for both self-managed OnPrem 7.6+ Couchbase deployments and also clould based 7.6+ Capella deployments.
+
+If you don't have the time to run the demo you can just download and watch the 4 minute video: easy-vector-langchain-demo_1920x1080.mp4 
 
 ### Prerequisites 
 
