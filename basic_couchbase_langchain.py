@@ -14,7 +14,7 @@ cluster = Cluster("couchbases://" + os.getenv("CB_HOSTNAME") + "/?ssl=no_verify"
 
 embeddings = OpenAIEmbeddings(openai_api_key=os.getenv("OPENAI_API_KEY")) 
 
-vs = CouchbaseVectorStore(cluster, "vectordemos", "langchain", "basic", embeddings, "basic_index")
+vs = CouchbaseVectorStore(cluster, os.getenv("CB_BUCKET"), os.getenv("CB_SCOPE"), os.getenv("CB_COLLECTION"), embeddings, os.getenv("CB_SEARCHINDEX"))
 
 text_array = ["lions", "tigers", "bears", "bicycle", "car", "motorcycle", "rock", "stone", "slab", "block"]
 print("text_array to add", text_array ,"\n")
