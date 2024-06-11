@@ -60,7 +60,7 @@ For each question, you will three ordered answers from your vector search
   export OPENAI_API_KEY="<open_ai_api_key>"
   ```
 
-- Note CB_HOSTNAME may not be the same as CB_FTSHOSTNAME.
+- Note CB_HOSTNAME might be different than CB_FTSHOSTNAME if your services are distributed (these are the same on a single node cluster).
 The evar CB_HOSTNAME is typically an IP in your cluster (or the Capella CONNECT hostname) for the Python SDK to connect to couchbases://${CB_HOSTNAME}. 
 The evar CB_FTSHOSTNAME is set to a node running the search service (or fts) for a curl like connection to https://${CB_FTSHOSTNAME}:18094 used for index creation. 
 
