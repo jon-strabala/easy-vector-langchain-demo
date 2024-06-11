@@ -75,7 +75,7 @@ The evar CB_FTSHOSTNAME is set to a node running the search service (or fts) for
 
 - Source the _setup file (we assume a bash shell) to configure your environment variables
 
-  `. _setup`
+  `source _setup`
 
 - If needed set the executable bits on various files via chmod for the following:
 
