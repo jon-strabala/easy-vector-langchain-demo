@@ -11,18 +11,27 @@ If you don't have the time to run the demo you can just download and watch the 4
 
 You will need a database user with login credentials to your Couchbase cluster and an OpenAI API bearer key for this Linux demo
 
-You probably want to create and activate a virtual environment using the standard library’s virtual environment tool venv and install packages.
+You will probably want to create and activate a virtual environment using the standard library's virtual environment tool, *venv*, and install local python packages.
 
 - https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/
 
-Quick tips on python virtual environments
+Quick tips on Python virtual environments (please folow this unless you are an expert)
 
-- Create and activate a virtual environment in the current directory<br><br>
+- Create and activate a virtual environment in a new empty demo directory<br><br>
+`mkdir MYDEMO`<br>
+`cd MYDEMO`<br>
 `python3 -m venv .venv`<br>
 `source .venv/bin/activate`
 
-- Then when all done deactivate it<br><br>
+- Then, when all done with this demo, you can deactivate it.<br><br>
 `deactivate`
+
+- Just in case you typed 'deactive' (you do this deactive when you're done with the full demo) - just run the source command again to reactivate the virtual Python environment:<br><br>
+`source .venv/bin/activate`
+
+- Now download this git repo and cd into it.<br><br>
+`git clone https://github.com/jon-strabala/easy-vector-langchain-demo.git`<br>
+`cd easy-vector-langchain-demo`
 
 ### How does this demo work?
 
@@ -68,7 +77,7 @@ The evar CB_FTSHOSTNAME is set to a node running the search service (or fts) for
 
   `. _setup`
 
-- If needed set the executable bit via chmod for the following:
+- If needed set the executable bits on various files via chmod for the following:
 
   `chmod +x basic_couchbase_langchain.py  check_couchbase.sh  check_openai.py  setup.py`
 
