@@ -15,7 +15,7 @@ You will probably want to create and activate a virtual environment using the st
 
 - https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/
 
-Quick tips on Python virtual environments (please folow this unless you are an expert)
+Quick tips on Python virtual environments (please folow this unless you are an expert). 
 
 - Create and activate a virtual environment in a new empty demo directory<br><br>
 `mkdir MYDEMO`<br>
@@ -23,11 +23,15 @@ Quick tips on Python virtual environments (please folow this unless you are an e
 `python3 -m venv .venv`<br>
 `source .venv/bin/activate`
 
+- The above works for *bash* or *zsh*, however you would use `. .venv/bin/activate` if you are using *sh*
+
 - Then, when all done with this demo, you can deactivate it.<br><br>
 `deactivate`
 
 - Just in case you typed 'deactive' (you do this deactive when you're done with the full demo) - just run the source command again to reactivate the virtual Python environment:<br><br>
 `source .venv/bin/activate`
+
+- The above works for *bash* or *zsh*, however you would use `. .venv/bin/activate` if you are using *sh*
 
 - Now download this git repo and cd into it.<br><br>
 `git clone https://github.com/jon-strabala/easy-vector-langchain-demo.git`<br>
@@ -76,6 +80,8 @@ The evar CB_FTSHOSTNAME is set to a node running the search service (or fts) for
 - Source the _setup file (we assume a bash shell) to configure your environment variables
 
   `source _setup`
+
+- The above works for *bash* or *zsh*, however you would use `. _setup` if you are using *sh*
 
 - If needed set the executable bits on various files via chmod for the following:
 
