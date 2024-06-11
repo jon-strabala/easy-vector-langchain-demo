@@ -132,3 +132,8 @@ For each question, you will three ordered answers from your vector search
   Running basic_couchbase_langchain.py multiple times will load the same data again
 
   You can run `./setup.py` again to get an option to reset your collection (drop/create) and readd your search index.
+
+- Finished
+
+  When you are all done with this demo, you should deactivate the python virtual environment (you can always reactivate it later).<br><br>
+  `deactivate`
