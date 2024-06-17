@@ -133,7 +133,7 @@ For each question, you will three ordered answers from your vector search
 
   You can run `./setup.py` again to get an option to reset your collection (drop/create) and readd your search index.
 
-  Try adding more words to the data corpus like "tv", "radio", "stereo", "apple itunes" to the `text_array` and another item to the "enjoying entertainment at home"
+  Try adding more words to the data corpus like "tv", "radio", "stereo", "apple itunes" to the `text_array` and another item to the set of quries like "enjoying entertainment at home"
 
     - text_array = ["tv", "radio", "stereo", "apple itunes", "lions", "tigers", "bears", "bicycle", "car", "motorcycle", "rock", "stone", "slab", "block"]
     - for query in ["enjoying entertainment at home", "vespa", "puma", "nugget"]:
