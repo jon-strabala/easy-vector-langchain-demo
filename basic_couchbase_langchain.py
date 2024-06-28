@@ -5,7 +5,7 @@ import time
 from couchbase.cluster import Cluster
 from couchbase.options import ClusterOptions
 from couchbase.auth import PasswordAuthenticator
-from langchain_community.vectorstores import CouchbaseVectorStore
+from langchain_couchbase import CouchbaseVectorStore
 from langchain_openai import OpenAIEmbeddings
 
 pa = PasswordAuthenticator(os.getenv("CB_USERNAME"), os.getenv("CB_PASSWORD"))
