@@ -1,6 +1,6 @@
 couchbase==4.3.0
-langchain==0.2.6
-langchain-community==0.2.6
+langchain==0.2.8
+langchain-community==0.2.7
 langchain-couchbase==0.0.1
-langchain-openai==0.1.12
+langchain-openai==0.1.16
 requests==2.32.3
